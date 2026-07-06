@@ -1,0 +1,28 @@
+# ── LLM via Groq (FREE — no credit card) ──────────────────────────────────
+groq==0.13.1
+langchain-groq==0.2.4
+
+# ── CrewAI framework ──────────────────────────────────────────────────────
+crewai==1.13.0
+crewai-tools==1.13.0
+
+# ── LangChain core ────────────────────────────────────────────────────────
+langchain>=0.3.23
+langchain-community>=0.3.23
+
+# ── ChromaDB vector store (FREE — runs locally, no cloud) ─────────────────
+langchain-chroma>=0.1.4
+chromadb>=1.1.0
+
+# ── Embeddings (FREE — runs locally, no API key needed) ───────────────────
+sentence-transformers==3.4.1
+
+# ── Web search (FREE — no API key, uses DuckDuckGo) ───────────────────────
+duckduckgo-search==8.1.1
+
+# ── Streamlit UI (FREE) ───────────────────────────────────────────────────
+streamlit==1.43.2
+
+# ── Utilities ─────────────────────────────────────────────────────────────
+python-dotenv>=1.1.1
+tiktoken==0.8.0
