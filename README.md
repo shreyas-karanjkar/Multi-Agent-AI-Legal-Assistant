@@ -1,294 +1,276 @@
+
 # ⚖️ Multi-Agent AI Legal Assistant (CrewAI + RAG)
 
-An AI-powered legal assistance system that uses a **multi-agent architecture** and **Retrieval-Augmented Generation (RAG)** to analyze legal queries, retrieve relevant Indian legal provisions, research legal precedents, and generate structured legal analysis.
+<p align="center">
+  <img src="screenshots/github-banner.png" alt="Multi-Agent AI Legal Assistant Banner" width="100%">
+</p>
 
-The system uses specialized AI agents coordinated through CrewAI, with Groq-hosted LLM inference and an interactive Streamlit interface.
+<p align="center">
 
-> **Disclaimer:** This project is intended for educational and demonstration purposes only. The generated responses do not constitute professional legal advice and should not replace consultation with a qualified legal professional.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![CrewAI](https://img.shields.io/badge/CrewAI-Multi--Agent-orange)
+![RAG](https://img.shields.io/badge/RAG-ChromaDB-green)
+![Groq](https://img.shields.io/badge/LLM-Groq-purple)
+![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
----
+</p>
 
-## 🚀 Features
-
-* 🤖 Multi-agent legal analysis workflow using CrewAI
-* 📋 Case intake and structured issue identification
-* 📚 Retrieval of relevant Indian legal provisions
-* ⚖️ Legal precedent research
-* 🧠 LLM-powered legal reasoning and analysis
-* 🔎 Retrieval-Augmented Generation (RAG)
-* 🗃️ ChromaDB-based vector storage
-* 🌐 Web-assisted legal research
-* 📝 Structured legal report generation
-* 💾 Downloadable analysis reports
-* 🖥️ Interactive Streamlit user interface
-* 🔐 Secure API key management through environment variables
+<p align="center">
+AI-powered Legal Decision Support System built using <b>CrewAI</b>, <b>Retrieval-Augmented Generation (RAG)</b>, <b>Groq Llama 3.3</b>, <b>ChromaDB</b>, and <b>Streamlit</b>.
+</p>
 
 ---
 
-## 🧠 Multi-Agent Architecture
+# 📖 Overview
 
-The application decomposes legal analysis into specialized tasks handled by dedicated agents.
+The **Multi-Agent AI Legal Assistant** is an AI-powered legal decision support system that analyzes legal cases using a **CrewAI-based multi-agent architecture**.
 
-### 1. Case Intake Agent
+Instead of relying on a single LLM, the application divides legal reasoning into specialized AI agents responsible for:
 
-Analyzes the user's legal query and converts the unstructured description into a structured case brief.
+- 🧾 Case Intake & Fact Extraction
+- 📚 Legal Provision Research
+- ⚖️ Legal Precedent Retrieval
+- 📝 Final Legal Advisory Generation
 
-Responsibilities include:
+The project combines **Retrieval-Augmented Generation (RAG)** with **CrewAI**, **ChromaDB**, **Sentence Transformers**, **DuckDuckGo Search**, and **Groq Llama 3.3** to generate structured legal analyses.
 
-* Identifying the core facts
-* Determining the parties involved
-* Extracting important events
-* Identifying potential legal issues
-* Preparing structured context for downstream agents
-
-### 2. Legal Research Agent
-
-Retrieves relevant legal provisions based on the facts and legal issues identified during case intake.
-
-Responsibilities include:
-
-* Searching the legal knowledge base
-* Identifying potentially applicable provisions
-* Providing relevant legal context for further analysis
-
-### 3. Legal Precedent Research Agent
-
-Researches relevant judicial precedents and supporting legal information.
-
-Responsibilities include:
-
-* Searching for related legal cases
-* Finding potentially relevant judicial decisions
-* Providing precedent context for the final analysis
-
-### 4. Legal Document Drafting Agent
-
-Combines the case analysis, retrieved legal provisions, and precedent research into a structured final report.
-
-Responsibilities include:
-
-* Synthesizing outputs from previous agents
-* Explaining relevant legal issues
-* Organizing applicable legal provisions
-* Summarizing precedent information
-* Suggesting possible next steps
-* Producing a readable legal analysis report
+> **Disclaimer:** This project is intended for educational and research purposes only and should not be considered professional legal advice.
 
 ---
 
-## 🔄 Workflow
+# 🏗 System Architecture
 
 ```text
-User Legal Query
-        │
-        ▼
-┌──────────────────────┐
-│   Streamlit Web UI   │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│   Case Intake Agent  │
-│  Facts & Legal Issues│
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────────┐
-│   Legal Research Agent   │
-│ Legal Provision Retrieval│
-└──────────┬───────────────┘
-           │
-           ▼
-┌───────────────────────────┐
-│ Precedent Research Agent  │
-│ Case Law & Web Research   │
-└──────────┬────────────────┘
-           │
-           ▼
-┌──────────────────────────┐
-│ Legal Drafting Agent     │
-│ Final Structured Report  │
-└──────────┬───────────────┘
-           │
-           ▼
-  Legal Analysis Report
-           │
-           ▼
-     Download as TXT
+                         User
+                           │
+                           ▼
+                Streamlit Web Interface
+                           │
+                           ▼
+               Multi-Agent AI Legal Assistant
+                           │
+      ┌────────────────────┼────────────────────┐
+      │                    │                    │
+      ▼                    ▼                    ▼
+ Case Intake         IPC Research        Legal Precedent
+    Agent               Agent               Agent
+      │                    │                    │
+      └───────────────┬────┴───────────────┘
+                      ▼
+          Legal Document Drafting Agent
+                      │
+                      ▼
+      Comprehensive Legal Advisory Report
+                      │
+                      ▼
+           Downloadable TXT Report
+
+Supporting Components:
+• CrewAI
+• Groq Llama 3.3
+• ChromaDB
+• Sentence Transformers
+• DuckDuckGo Search
 ```
 
 ---
 
-## 🛠️ Technology Stack
+# ✨ Features
 
-| Technology            | Purpose                                           |
-| --------------------- | ------------------------------------------------- |
-| Python                | Core application development                      |
-| CrewAI                | Multi-agent orchestration                         |
-| Groq                  | LLM inference                                     |
-| Llama 3.3 70B         | Language model for agent reasoning and generation |
-| RAG                   | Retrieval-grounded response generation            |
-| ChromaDB              | Vector database and retrieval                     |
-| Sentence Transformers | Local text embeddings                             |
-| DuckDuckGo Search     | Web-assisted legal research                       |
-| Streamlit             | Interactive web application                       |
+- 🤖 Multi-Agent AI Workflow
+- 📋 Case Intake & Fact Extraction
+- 📚 IPC / IT Act Research
+- ⚖️ Legal Precedent Retrieval
+- 🧠 Retrieval-Augmented Generation (RAG)
+- 🗂 ChromaDB Vector Search
+- 🚀 Groq Llama 3.3 Integration
+- 🌐 DuckDuckGo Search
+- 📄 Downloadable Legal Report (.txt)
+- 🖥 Interactive Streamlit Interface
 
 ---
 
-## 📁 Project Structure
+# 🤖 Multi-Agent Workflow
+
+1. **Case Intake Agent** – Understands the legal issue and extracts structured facts.
+
+2. **IPC Legal Research Agent** – Retrieves relevant legal provisions.
+
+3. **Legal Precedent Agent** – Searches for similar legal precedents.
+
+4. **Legal Document Drafting Agent** – Generates the final legal advisory report.
+
+---
+
+# 🛠 Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Backend |
+| CrewAI | Multi-Agent Orchestration |
+| Streamlit | User Interface |
+| Groq | LLM |
+| Llama 3.3 | Reasoning Model |
+| ChromaDB | Vector Database |
+| Sentence Transformers | Embeddings |
+| DuckDuckGo | Legal Search |
+| RAG | Context Retrieval |
+
+---
+
+# 📂 Project Structure
 
 ```text
 Multi-Agent-AI-Legal-Assistant/
 │
 ├── data/
-│   └── ipc_sections.py
-│
 ├── tools/
-│   ├── ipc_search_tool.py
-│   └── legal_precedent_tool.py
-│
-├── agents.py
+├── screenshots/
+├── sample_outputs/
 ├── app.py
+├── agents.py
 ├── crew.py
 ├── tasks.py
 ├── requirements.txt
 ├── .env.example
-├── .gitignore
 └── README.md
 ```
 
-### Main Components
-
-* `app.py` — Streamlit user interface and application entry point
-* `agents.py` — Definitions of specialized legal AI agents
-* `tasks.py` — Task definitions and expected outputs
-* `crew.py` — Multi-agent workflow orchestration
-* `data/` — Legal knowledge resources used by the application
-* `tools/` — Custom legal provision and precedent research tools
-
 ---
 
-## ⚙️ Installation and Setup
-
-### 1. Clone the repository
+# ⚙ Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/shreyas-karanjkar/Multi-Agent-AI-Legal-Assistant.git
+
 cd Multi-Agent-AI-Legal-Assistant
-```
 
-### 2. Create a virtual environment
-
-For Windows:
-
-```bash
 py -3.11 -m venv venv
-```
 
-Activate it:
-
-```bash
 venv\Scripts\activate
-```
 
-For Linux/macOS:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
 python -m pip install -r requirements.txt
 ```
 
-### 4. Configure environment variables
-
-Create a `.env` file in the project root:
+Create `.env`
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
-Alternatively, copy `.env.example` and replace the placeholder API key with your own key.
-
-### 5. Run the application
+Run
 
 ```bash
 streamlit run app.py
 ```
 
-The application will start locally and can be accessed through the URL displayed in the terminal.
-
 ---
 
-## 💡 Example Query
+# 💡 Sample Legal Query
 
 ```text
 A friend of mine discovered that someone had gained unauthorized access to their social media account, changed the password, and used the account to send fraudulent messages to their contacts.
 
-What legal action can my friend take under Indian law? Please identify the relevant legal provisions, applicable legal precedents, and recommended next steps.
+What legal action can my friend take under Indian law? Please identify the applicable provisions, legal precedents, and recommended next steps.
 ```
-
-The system processes the query through the multi-agent workflow and generates a structured legal analysis report.
 
 ---
 
-## 📸 Application Preview
+# 📸 Application Demo
 
-Screenshots of the application interface and generated legal analysis will be added here.
+Rename your screenshots exactly as:
 
 ```text
 screenshots/
 ├── home-page.png
-├── query-input.png
-└── generated-analysis.png
+├── legal-query.png
+├── analysis-pipeline.png
+├── case-intake-agent.png
+├── ipc-research-agent.png
+├── legal-precedent-agent.png
+├── legal-drafting-agent.png
+└── final-report.png
 ```
+
+## Home Page
+
+![](screenshots/home-page.png)
+
+## User Query
+
+![](screenshots/legal-query.png)
+
+## Analysis Pipeline
+
+![](screenshots/analysis-pipeline.png)
+
+## Case Intake Agent
+
+![](screenshots/case-intake-agent.png)
+
+## IPC Research Agent
+
+![](screenshots/ipc-research-agent.png)
+
+## Legal Precedent Agent
+
+![](screenshots/legal-precedent-agent.png)
+
+## Legal Drafting Agent
+
+![](screenshots/legal-drafting-agent.png)
+
+## Final Legal Advisory Report
+
+![](screenshots/final-report.png)
 
 ---
 
-## 📄 Sample Output
+# 📄 Sample Output
 
-A sample generated legal analysis report will be available in:
+Rename your downloaded report as:
 
 ```text
 sample_outputs/
-└── cybercrime_case_analysis.txt
+└── cybercrime-case-analysis.txt
 ```
 
-This demonstrates the complete workflow from user query to structured legal analysis.
+Open directly from GitHub:
+
+**📄 [Sample Legal Advisory Report](sample_outputs/cybercrime-case-analysis.txt)**
 
 ---
 
-## 🔮 Future Improvements
+# 🚀 Future Improvements
 
-* Expand the legal knowledge base
-* Add support for more Indian statutes and legal domains
-* Improve citation traceability for retrieved provisions and precedents
-* Add PDF document upload and analysis
-* Add conversational follow-up questions
-* Introduce source verification and confidence scoring
-* Add multilingual support for Indian languages
-* Improve retrieval evaluation and response quality testing
-* Deploy the application for public demonstration
+- Support for Bharatiya Nyaya Sanhita (BNS)
+- PDF Upload
+- Voice-based Legal Queries
+- Confidence Scores
+- Source Citations
+- Cloud Deployment
+- Multilingual Support
 
 ---
 
-## ⚠️ Limitations
+# ⚠ Disclaimer
 
-* AI-generated legal analysis may contain errors or incomplete interpretations.
-* Retrieved legal information should be independently verified.
-* Web search results may vary depending on source availability.
-* The application is a prototype intended for educational and research purposes.
-* The system should not be used as a substitute for professional legal advice.
+This application is intended for educational and research purposes only.
+
+The generated legal analyses are AI-generated and should not be considered professional legal advice.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Shreyas Karanjkar**
 
-Developed as a project exploring **Multi-Agent Systems, Retrieval-Augmented Generation, LLM applications, and Legal AI**.
+M.Tech (Computer Science & Engineering)
+
+VIT Vellore
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
