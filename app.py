@@ -102,7 +102,7 @@ st.markdown(
 st.markdown(
     """
     <div class="main-header">
-        <h1>⚖️ Personal AI Legal Assistant</h1>
+        <h1>⚖️ Multi-Agent AI Legal Assistant</h1>
         <p>Multi-Agent RAG · CrewAI · IPC Sections · Legal Precedents</p>
     </div>
     """,

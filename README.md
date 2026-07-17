@@ -196,35 +196,35 @@ screenshots/
 
 ## Home Page
 
-![](screenshots/home-page.png)
+![](screenshots/home-page.jpg)
 
 ## User Query
 
-![](screenshots/legal-query.png)
+![](screenshots/legal-query.jpg)
 
 ## Analysis Pipeline
 
-![](screenshots/analysis-pipeline.png)
+![](screenshots/analysis-pipeline.jpg)
 
 ## Case Intake Agent
 
-![](screenshots/case-intake-agent.png)
+![](screenshots/case-intake-agent.jpg)
 
 ## IPC Research Agent
 
-![](screenshots/ipc-research-agent.png)
+![](screenshots/ipc-research-agent.jpg)
 
 ## Legal Precedent Agent
 
-![](screenshots/legal-precedent-agent.png)
+![](screenshots/legal-precedent-agent.jpg)
 
 ## Legal Drafting Agent
 
-![](screenshots/legal-drafting-agent.png)
+![](screenshots/legal-drafting-agent.jpg)
 
 ## Final Legal Advisory Report
 
-![](screenshots/final-report.png)
+![](screenshots/final-report.jpg)
 
 ---
 
