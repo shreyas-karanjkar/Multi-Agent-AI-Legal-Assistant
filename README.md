@@ -39,7 +39,6 @@ The project combines **Retrieval-Augmented Generation (RAG)** with **CrewAI**, *
 
 ---
 
-# 🏗 System Architecture
 
 # 🏗️ System Architecture
 
