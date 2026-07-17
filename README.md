@@ -41,38 +41,13 @@ The project combines **Retrieval-Augmented Generation (RAG)** with **CrewAI**, *
 
 # 🏗 System Architecture
 
-```text
-                         User
-                           │
-                           ▼
-                Streamlit Web Interface
-                           │
-                           ▼
-               Multi-Agent AI Legal Assistant
-                           │
-      ┌────────────────────┼────────────────────┐
-      │                    │                    │
-      ▼                    ▼                    ▼
- Case Intake         IPC Research        Legal Precedent
-    Agent               Agent               Agent
-      │                    │                    │
-      └───────────────┬────┴───────────────┘
-                      ▼
-          Legal Document Drafting Agent
-                      │
-                      ▼
-      Comprehensive Legal Advisory Report
-                      │
-                      ▼
-           Downloadable TXT Report
+# 🏗️ System Architecture
 
-Supporting Components:
-• CrewAI
-• Groq Llama 3.3
-• ChromaDB
-• Sentence Transformers
-• DuckDuckGo Search
-```
+<p align="center">
+  <img src="screenshots/architecture.png" alt="System Architecture" width="100%">
+</p>
+
+The Multi-Agent AI Legal Assistant follows a modular CrewAI-based architecture. The Streamlit interface accepts user queries, which are orchestrated through specialized AI agents. Each agent performs a dedicated legal reasoning task, leveraging Retrieval-Augmented Generation (RAG), semantic search, and external legal resources before generating a comprehensive legal advisory report.
 
 ---
 
