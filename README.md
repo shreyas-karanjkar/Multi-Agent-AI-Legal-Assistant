@@ -184,14 +184,14 @@ Rename your screenshots exactly as:
 
 ```text
 screenshots/
-├── home-page.png
-├── legal-query.png
-├── analysis-pipeline.png
-├── case-intake-agent.png
-├── ipc-research-agent.png
-├── legal-precedent-agent.png
-├── legal-drafting-agent.png
-└── final-report.png
+├── home-page.jpg
+├── legal-query.jpg
+├── analysis-pipeline.jpg
+├── case-intake-agent.jpg
+├── ipc-research-agent.jpg
+├── legal-precedent-agent.jpg
+├── legal-drafting-agent.jpg
+└── final-report.jpg
 ```
 
 ## Home Page
